@@ -8,8 +8,8 @@ import BestSellers from "./components/BestSellers";
 
 import HeroSection from "./components/HeroSection/HeroSection";
 
+
 export default function Index() {
-  const [searchQuery, setSearchQuery] = useState("");
 
   const phoneCategories = [
     {

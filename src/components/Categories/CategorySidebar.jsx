@@ -75,11 +75,11 @@ const categories = [
       "Security Cameras",
     ],
   },
-  {
-    name: "Sounds",
-    icon: "🔊",
-    subcategories: ["Headphones", "Earbuds", "Bluetooth Speakers", "Soundbars"],
-  },
+  // {
+  //   name: "Sounds",
+  //   icon: "🔊",
+  //   subcategories: ["Headphones", "Earbuds", "Bluetooth Speakers", "Soundbars"],
+  // },
   // {
   //   name: "Office",
   //   icon: "🏢",
@@ -122,7 +122,7 @@ export function CategorySidebar() {
 
   return (
     <div className="lg:col-span-1 hidden lg:block">
-      <div className="bg-white dark:bg-gray-800 dark:text-white rounded-lg p-6">
+      <div className="bg-gray-300 shadow-2xl dark:bg-gray-800 dark:text-white rounded-lg p-6">
         <div className="flex items-center gap-2 mb-4">
           <span className="text-red-500">🔥</span>
           <span className="font-bold text-red-500 uppercase">Sale 40% Off</span>

@@ -43,12 +43,11 @@ export default function Navbar() {
     console.log("submitted");
   };
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <>
       <div>
         {" "}
-        <header className="bg-gray-100 dark:bg-gray-800 dark:text-white border-t-1 shadow-sm">
+        <header className="bg-gray-300 shadow-2xl dark:bg-gray-800 dark:text-white border-t-1">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex lg:flex-row items-center justify-between gap-4">
               {/* Logo */}
