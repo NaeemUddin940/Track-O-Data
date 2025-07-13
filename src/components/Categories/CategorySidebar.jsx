@@ -80,41 +80,41 @@ const categories = [
     icon: "🔊",
     subcategories: ["Headphones", "Earbuds", "Bluetooth Speakers", "Soundbars"],
   },
-  {
-    name: "Office",
-    icon: "🏢",
-    subcategories: ["Printers", "Monitors", "Keyboards", "Mice", "Webcams"],
-  },
-  {
-    name: "Storage, USB",
-    icon: "💾",
-    subcategories: [
-      "External HDDs",
-      "External SSDs",
-      "USB Flash Drives",
-      "Memory Cards",
-    ],
-  },
-  {
-    name: "Accessories",
-    icon: "🔌",
-    subcategories: [
-      "Cables & Adapters",
-      "Chargers",
-      "Power Banks",
-      "Cases & Covers",
-    ],
-  },
-  {
-    name: "Clearance",
-    icon: "🏷️",
-    subcategories: [
-      "Discounted Laptops",
-      "Clearance Phones",
-      "Last Chance Deals",
-      "Refurbished Items",
-    ],
-  },
+  // {
+  //   name: "Office",
+  //   icon: "🏢",
+  //   subcategories: ["Printers", "Monitors", "Keyboards", "Mice", "Webcams"],
+  // },
+  // {
+  //   name: "Storage, USB",
+  //   icon: "💾",
+  //   subcategories: [
+  //     "External HDDs",
+  //     "External SSDs",
+  //     "USB Flash Drives",
+  //     "Memory Cards",
+  //   ],
+  // },
+  // {
+  //   name: "Accessories",
+  //   icon: "🔌",
+  //   subcategories: [
+  //     "Cables & Adapters",
+  //     "Chargers",
+  //     "Power Banks",
+  //     "Cases & Covers",
+  //   ],
+  // },
+  // {
+  //   name: "Clearance",
+  //   icon: "🏷️",
+  //   subcategories: [
+  //     "Discounted Laptops",
+  //     "Clearance Phones",
+  //     "Last Chance Deals",
+  //     "Refurbished Items",
+  //   ],
+  // },
 ];
 
 export function CategorySidebar() {

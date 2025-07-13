@@ -5,7 +5,7 @@ export default function TopHeader() {
     <div className="hidden md:block dark:bg-gray-800 dark:text-white bg-gray-100 text-sm py-2 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
         <div className="flex items-center gap-2">
-          <span className="bg-gray-200 font-bold px-2 py-1 rounded text-xs">
+          <span className="bg-gray-200 dark:bg-gray-800 font-bold px-2 py-1 rounded text-xs">
             📞 Hotline 24/7
           </span>
           <a href="tel:+8801311078039" className="font-semibold">

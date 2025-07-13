@@ -45,7 +45,7 @@ export default function Navbar() {
     console.log("submitted");
   };
 
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <>
       <div>
@@ -78,6 +78,13 @@ export default function Navbar() {
                   <span className="font-bold text-sm uppercase">Contact</span>
                 </Link>
               </nav>
+              <div>
+                <PlaceholdersAndVanishInput
+                  placeholders={placeholders}
+                  onChange={handleChange}
+                  onSubmit={onSubmit}
+                />
+              </div>
 
               {/* User Actions */}
               <div className="flex items-center gap-4">
@@ -122,11 +129,11 @@ export default function Navbar() {
       </div>
       <div>
         {/* Search Bar */}
-        <div className="bg-green-500 hidden md:block py-4">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-col lg:flex-row items-center gap-4">
-              {/* Search */}
-              <div className="flex-1 max-w-xl">
+        {/* <div className="bg-green-500 hidden md:block py-4"> */}
+        {/* <div className="max-w-7xl mx-auto px-4"> */}
+        {/* <div className="flex flex-col lg:flex-row items-center gap-4"> */}
+        {/* Search */}
+        {/* <div className="flex-1 max-w-xl">
                 <div className="flex bg-white z-11">
                   <div
                     className="relative" // Needed for absolute positioning of the dropdown content
@@ -154,10 +161,10 @@ export default function Navbar() {
                     onSubmit={onSubmit}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              {/* Features */}
-              <div className="flex flex-wrap items-center gap-6 text-white text-sm">
+        {/* Features */}
+        {/* <div className="flex flex-wrap items-center gap-6 text-white text-sm">
                 <div className="flex items-center gap-2">
                   <span>🚚</span>
                   <span className="uppercase">free shipping over $199</span>
@@ -170,10 +177,10 @@ export default function Navbar() {
                   <span>🔒</span>
                   <span className="uppercase">100% secure payment</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </>
   );
