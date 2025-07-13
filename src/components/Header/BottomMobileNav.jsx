@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Home, Search, History, User, Sun, Moon } from "lucide-react"; // Importing icons from lucide-react
+import React, { useState } from "react";
+import { Home, Search, History, User } from "lucide-react"; // Importing icons from lucide-react
 
 // Main App component that renders the Navbar
 export default function App() {

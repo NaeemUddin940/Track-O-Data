@@ -9,8 +9,6 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { PlaceholdersAndVanishInput } from "../UIComponent/placeholders-and-vanish-input";
-import { CategorySidebar } from "../Categories/CategorySidebar";
-import { cn } from "../../lib/utils";
 
 export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
