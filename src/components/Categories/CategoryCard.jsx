@@ -21,9 +21,9 @@ export const CategoryCard = () => {
         Browse By Category
       </h3>
       <div className="dark:text-[#37ff00] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-5 text-black rounded-2xl">
-        {category.map((c) => (
+        {category.map((c, index) => (
           <div
-            key={c.id}
+            key={index}
             className="dark:bg-gray-800 rounded-2xl bg-gray-300 w-[163px] h-[128px] flex flex-col justify-center items-center shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] cursor-pointer dark:shadow-[10px_10px_20px_#313c4a,-10px_-10px_20px_#1e252e]">
             <img
               key={c.id}
