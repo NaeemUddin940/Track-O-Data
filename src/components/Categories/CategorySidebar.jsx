@@ -121,8 +121,8 @@ export function CategorySidebar() {
   const [expandedCategory, setExpandedCategory] = useState(null);
 
   return (
-    <div className="lg:col-span-1 hidden lg:block">
-      <div className="bg-gray-300 shadow-2xl dark:bg-gray-800 dark:text-white rounded-lg p-6">
+    <div className="lg:col-span-1 hidden rounded-2xl lg:block">
+      <div className="bg-gray-300 dark:shadow-[10px_10px_20px_#313c4a,-10px_-10px_20px_#1e252e] shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:bg-gray-800 dark:text-white  p-6">
         <div className="flex items-center gap-2 mb-4">
           <span className="text-red-500">🔥</span>
           <span className="font-bold text-red-500 uppercase">Sale 40% Off</span>

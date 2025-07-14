@@ -1,19 +1,12 @@
-import { useState } from "react";
-import { Search, Star, ChevronLeft, ChevronRight } from "lucide-react";
-
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import BrandNewSection from "./components/BrandNewSection";
 import CategorySection from "./components/CategorySection";
-
-import BestSellers from "./components/BestSellers";
-
+import BestSellers from "./components/UIComponent/BestSellers";
 import HeroSection from "./components/HeroSection/HeroSection";
-import BrandAndCategories from "./components/Categories/BrandAndCategories";
-import FeaturedBrands from "./components/Categories/FeaturedBrands";
-import TopCategories from "./components/Categories/TopCategories";
-
+import { InfiniteSlider } from "./components/motion-primitives/infinite-slider";
+import CategoryCard from "./components/Categories/CategoryCard";
 
 export default function Index() {
-
   const phoneCategories = [
     {
       name: "iPhone (iOS)",
@@ -114,24 +107,74 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-300 dark:bg-background">
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
+        {/* Hero Section */}
         <HeroSection />
 
-     {/* Featured Brand and Categories */}
-       {/* Featured Brands & Top Categories */}
-        <div className="grid grid-cols-1 mt-5 lg:grid-cols-2 gap-6">
-          <FeaturedBrands />
-          <TopCategories />
+        {/* Infinity Slider */}
+        <div className="mt-10">
+          <div>
+            <h2 className="text-5xl dark:text-white ml-10 font-bold mb-5">
+              Featured Brand
+            </h2>
+          </div>
+          <InfiniteSlider speedOnHover={20} gap={24}>
+            <img
+              src="https://i.pinimg.com/1200x/de/2b/4f/de2b4f2a216db5c849e1d040ad17958f.jpg"
+              alt="Dean blunt - Black Metal 2"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/736x/3a/50/c0/3a50c07a7b0d0732e8cb7ea47abcf547.jpg"
+              alt="Jungle Jack - JUNGLE DES ILLUSIONS VOL 2"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/736x/05/38/a2/0538a2166b0ee8ba45e5ffb38aceb8c8.jpg"
+              alt="Yung Lean - Stardust"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/736x/d9/e5/d3/d9e5d31c545f5ee163bd8b43acc1fd8b.jpg"
+              alt="Lana Del Rey - Ultraviolence"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/1200x/18/a5/6c/18a56c95cc67e9cd3db848bb93f48b7e.jpg"
+              alt="A$AP Rocky - Tailor Swif"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/736x/85/e8/ac/85e8ac7e34fc40846fedd80dee7bec86.jpg"
+              alt="Midnight Miami (feat Konvy) - Nino Paid, Konvy"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/1200x/6e/2d/05/6e2d05f0d6c796493566a13bb172a777.jpg"
+              alt="Midnight Miami (feat Konvy) - Nino Paid, Konvy"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+            <img
+              src="https://i.pinimg.com/1200x/ec/2c/25/ec2c25ad3c5d1a55a48a0834aae1a9bc.jpg"
+              alt="Midnight Miami (feat Konvy) - Nino Paid, Konvy"
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+          </InfiniteSlider>
         </div>
+
+        {/* CategoryCard */}
+        <CategoryCard />
 
         {/* Deals Section */}
         <section className="mt-8">
-          <div className="bg-green-500 text-white rounded-lg p-6">
+          <div className="dark:bg-gray-800 shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[10px_10px_20px_#313c4a,-10px_-10px_20px_#1e252e] bg-gray-300 text-white rounded-2xl p-6">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold uppercase">Deals of the day</h2>
-              <a href="#" className="text-white text-sm">
+              <h2 className="text-xl font-bold uppercase dark:text-white text-black">
+                Deals of the day
+              </h2>
+              <a href="#" className="dark:text-white text-black text-sm">
                 View All →
               </a>
             </div>
@@ -140,7 +183,7 @@ export default function Index() {
 
         {/* Product Showcase */}
         <section className="mt-8">
-          <div className="bg-white rounded-lg p-8">
+          <div className="bg-gray-200 dark:bg-gray-800 dark:text-white shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[10px_10px_20px_#313c4a,-10px_-10px_20px_#1e252e] rounded-2xl p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Product Images */}
               <div className="space-y-4">
@@ -164,7 +207,7 @@ export default function Index() {
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/6760e9ef66313f8a4f3b57388f0f752de9390a09?width=810"
                       alt="Main Product"
-                      className="w-full h-72 object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                     <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-2 rounded">
                       <div className="text-xs">save</div>
@@ -232,16 +275,16 @@ export default function Index() {
                   <p className="text-sm font-medium">
                     hurry up! Promotion will expires in
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 dark:text-white">
                     {[
-                      { value: "-162", unit: "d" },
-                      { value: "-9", unit: "h" },
-                      { value: "-32", unit: "m" },
-                      { value: "-34", unit: "s" },
+                      { value: "162", unit: "d" },
+                      { value: "9", unit: "h" },
+                      { value: "32", unit: "m" },
+                      { value: "34", unit: "s" },
                     ].map((time, index) => (
                       <div
                         key={index}
-                        className="bg-gray-100 rounded p-2 text-center min-w-[60px]">
+                        className="bg-gray-300 dark:bg-gray-700 rounded p-2 text-center min-w-[60px]">
                         <div className="font-bold text-xl">{time.value}</div>
                         <div className="text-sm text-gray-500">{time.unit}</div>
                       </div>

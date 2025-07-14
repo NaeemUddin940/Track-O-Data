@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
       {/* Categories Sidebar */}
-      <div className="lg:col-span-3">
+      <div className="lg:col-span-3 rounded-2xl">
         <CategorySidebar />
       </div>
 

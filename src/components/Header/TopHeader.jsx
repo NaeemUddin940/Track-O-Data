@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function TopHeader() {
   return (
-    <div className="hidden md:block dark:bg-gray-800 dark:text-white bg-gray-200 text-sm py-2 px-4">
+    <div className="hidden md:block dark:bg-background dark:text-white bg-gray-200 text-sm py-2 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
         <div className="flex items-center gap-2">
           <span className="bg-gray-200 dark:bg-gray-800 font-bold px-2 py-1 rounded text-xs">

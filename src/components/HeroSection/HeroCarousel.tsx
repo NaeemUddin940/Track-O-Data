@@ -128,7 +128,7 @@ export default function HeroCarousel() {
         <div className="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 flex items-center gap-4 text-sm">
           <button
             onClick={prevSlide}
-            className="text-gray-600 hover:text-black"
+            className="text-gray-600 cursor-pointer hover:text-black"
           >
             prev
           </button>
@@ -137,7 +137,7 @@ export default function HeroCarousel() {
           </span>
           <button
             onClick={nextSlide}
-            className="text-gray-600 hover:text-black"
+            className="text-gray-600 cursor-pointer hover:text-black"
           >
             next
           </button>
