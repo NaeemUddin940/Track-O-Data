@@ -20,7 +20,7 @@ export const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="max-w-full mix-blend-darken max-h-full object-contain p-4"
+          className="max-w-full mix-blend-darken dark:mix-blend-hard-light max-h-full object-cover p-4"
           onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x200/333/FFF?text=Image+Error"; }}
         />
       </div>

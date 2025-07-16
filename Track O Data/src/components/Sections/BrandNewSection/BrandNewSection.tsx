@@ -59,7 +59,7 @@ export default function BrandNewSection() {
               <h3 className="font-bold text-base mb-2 line-clamp-1">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-1">
+              <p className="text-gray-500 text-sm mb-4 line-clamp-1">
                 {item.description}
               </p>
               <button className="border border-green-500 text-green-500 px-6 py-2 rounded font-medium hover:bg-green-500 cursor-pointer hover:text-white transition-colors uppercase text-sm">

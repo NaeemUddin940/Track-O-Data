@@ -1,9 +1,22 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ProductCardByCategory } from "./ProductCardByCategory";
+import { ClickButton } from "../UIComponent/ClickButton";
 
 interface CategoryItem {
   name: string;
   items: string;
   image: string;
+}
+
+interface mobilePhone {
+  name: string;
+  price: number;
+  oldPrice: number;
+  rating: number;
+  image: string;
+  features: any[];
+  status: string;
+  save: number;
 }
 
 interface CategorySectionProps {
@@ -14,6 +27,7 @@ interface CategorySectionProps {
   heroPrice?: string;
   categories: CategoryItem[];
   className?: string;
+  mobilePhone?: mobilePhone[];
 }
 
 export default function CategorySection({
@@ -23,11 +37,12 @@ export default function CategorySection({
   heroSubtitle,
   heroPrice,
   categories,
+  mobilePhone,
   className = "",
 }: CategorySectionProps) {
   return (
     <section className={`mt-8  ${className}`}>
-      <div className="bg-gray-300 shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] rounded-2xl p-8">
+      <div className="bg-gray-300 dark:bg-background dark:text-gray-50 shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] rounded-2xl p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-xl font-bold uppercase">{title}</h2>
@@ -50,10 +65,12 @@ export default function CategorySection({
                 {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
                 <div className="relative p-6 text-white">
                   {heroTitle && (
-                    <h3 className="text-2xl font-bold mb-2">{heroTitle}</h3>
+                    <h3 className="text-2xl text-black font-bold mb-2">
+                      {heroTitle}
+                    </h3>
                   )}
                   {heroSubtitle && (
-                    <p className="text-sm mb-4">{heroSubtitle}</p>
+                    <p className="text-sm text-black mb-4">{heroSubtitle}</p>
                   )}
                   {heroPrice && (
                     <p className="text-lg">
@@ -70,19 +87,19 @@ export default function CategorySection({
 
           {/* Categories Grid */}
           <div
-            className={`grid md:grid-cols-3 grid-cols-2 gap-4 ${heroImage ? "" : "lg:col-span-3"}`}
-          >
+            className={`grid md:grid-cols-3 grid-cols-2 gap-4 ${
+              heroImage ? "" : "lg:col-span-3"
+            }`}>
             {categories.map((category, index) => (
               <button
                 key={index}
                 onClick={() => console.log(`Clicked on ${category.name}`)}
-                className="text-center  group cursor-pointer w-full"
-              >
-                <div className="flex items-center gap-3 p-4 hover:bg-gray-50 hover:shadow-sm rounded-lg transition-all duration-200 border border-transparent hover:border-green-200">
+                className="text-center  group cursor-pointer w-full">
+                <div className="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-gray-900 hover:shadow-sm rounded-lg transition-all duration-200 border border-transparent hover:border-green-200">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-12 h-12 object-contain group-hover:scale-105 transition-transform  duration-200"
+                    className="w-12 h-12  object-contain group-hover:scale-120 transition-transform  duration-200"
                   />
                   <div className="text-left">
                     <h4 className="font-bold text-sm group-hover:text-green-600 transition-colors">
@@ -97,15 +114,17 @@ export default function CategorySection({
             ))}
           </div>
         </div>
+        <hr className="text-gray-400" />
+        <div className="grid grid-cols-1 min-[650px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1100px]:grid-cols-4 mt-5 gap-5">
+          {mobilePhone &&
+            mobilePhone.map((product, index) => (
+              <ProductCardByCategory key={index} product={product} />
+            ))}
+        </div>
 
         {/* Navigation */}
         <div className="flex justify-center gap-2 mt-6">
-          <button className="p-2 bg-gray-100 hover:bg-gray-200 cursor-pointer rounded-full">
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button className="p-2 bg-gray-100 hover:bg-gray-200 cursor-pointer rounded-full">
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          <ClickButton title="Load More" custom="shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a]  bg-gray-300 text-black dark:text-white dark:bg-gray-600" />
         </div>
       </div>
     </section>

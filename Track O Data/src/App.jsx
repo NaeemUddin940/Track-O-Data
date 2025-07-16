@@ -1,6 +1,6 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import BrandNewSection from "./components/Sections/BrandNewSection/BrandNewSection";
-import CategorySection from "../src/components/Sections/CategorySection/CategorySection";
+import CategorySection from "./components/Categories/CategorySection";
 import HeroSection from "./components/HeroSection/HeroSection";
 import FeaturedBrands from "../src/components/Categories/FeaturedBrands";
 import TopCategories from "../src/components/Categories/TopCategories";
@@ -8,6 +8,8 @@ import game from "../src/assets/NewFolder/game.png";
 import main from "../src/assets/NewFolder/main.png";
 import phone from "../src/assets/NewFolder/phone.png";
 import { ProductSlider } from "./components/Sections/BestSellers/BestSellers";
+import CategoryGridSection from "./components/Categories/CategoryGridSection";
+import ResponsiveFooter from "./components/Footer/Footer";
 
 export default function App() {
   const phoneCategories = [
@@ -107,6 +109,107 @@ export default function App() {
     { name: "Network", items: "90 Items", icon: "🌐" },
     { name: "Security", items: "12 Items", icon: "🔒" },
     { name: "Projectors", items: "12 Items", icon: "📽️" },
+  ];
+
+  const mobilePhone = [
+    {
+      id: 1,
+      name: "Samsung Galaxy S24 Ultra",
+      price: 1199.0,
+      oldPrice: 1299.0,
+      rating: 250,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Galaxy+S24",
+      features: ["Snapdragon 8 Gen 3", "200MP Camera", "S-Pen Support"],
+      status: "In stock",
+      save: 100.0,
+    },
+    {
+      id: 2,
+      name: "iPhone 15 Pro Max",
+      price: 1399.0,
+      oldPrice: null,
+      rating: 300,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=iPhone+15",
+      features: ["A17 Bionic Chip", "Titanium Design", "Dynamic Island"],
+      status: "In stock",
+      save: null,
+    },
+    {
+      id: 3,
+      name: "Google Pixel 8 Pro",
+      price: 899.0,
+      oldPrice: 999.0,
+      rating: 180,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Pixel+8",
+      features: ["Tensor G3 Chip", "Best AI Features", "Long Software Support"],
+      status: "In stock",
+      save: 100.0,
+    },
+    {
+      id: 4,
+      name: "OnePlus 12",
+      price: 799.0,
+      oldPrice: 849.0,
+      rating: 120,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=OnePlus+12",
+      features: ["Snapdragon 8 Gen 3", "120Hz AMOLED Display", "Fast Charging"],
+      status: "In stock",
+      save: 50.0,
+    },
+    {
+      id: 5,
+      name: "Xiaomi 14 Ultra",
+      price: 999.0,
+      oldPrice: null,
+      rating: 190,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Xiaomi+14",
+      features: ["Leica Camera System", "HyperCharge", "Ceramic Back"],
+      status: "In stock",
+      save: null,
+    },
+    {
+      id: 6,
+      name: "Realme GT 5 Pro",
+      price: 599.0,
+      oldPrice: 649.0,
+      rating: 90,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Realme+GT",
+      features: ["Snapdragon 8 Gen 3", "Periscope Telephoto", "Large Battery"],
+      status: "In stock",
+      save: 50.0,
+    },
+    {
+      id: 7,
+      name: "Oppo Find X7 Ultra",
+      price: 1099.0,
+      oldPrice: null,
+      rating: 210,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Oppo+Find",
+      features: [
+        "Dual Periscope Cameras",
+        "Hasselblad Imaging",
+        "Premium Design",
+      ],
+      status: "Pre-Order",
+      save: null,
+      preOrder: true,
+    },
+    {
+      id: 8,
+      name: "Vivo v20 pro",
+      price: 109.0,
+      oldPrice: null,
+      rating: 210,
+      image: "https://placehold.co/200x200/E0E0E0/333333?text=Oppo+Find",
+      features: [
+        "Dual Periscope Cameras",
+        "Hasselblad Imaging",
+        "Premium Design",
+      ],
+      status: "Pre-Order",
+      save: null,
+      preOrder: true,
+    },
   ];
 
   return (
@@ -313,159 +416,67 @@ export default function App() {
         <BrandNewSection />
 
         {/* Phone & Tablets Section */}
-        <CategorySection
-          title="Top Cellphones & Tablets"
-          heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/b14644599f43028fd9744180abb62546f4921c5e?width=1210"
-          heroTitle="redmi note 12 Pro+ 5g"
-          heroSubtitle="Rise to the challenge"
-          categories={phoneCategories}
-        />
+        <div>
+          <CategorySection
+            title="Top Cellphones & Tablets"
+            heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/b14644599f43028fd9744180abb62546f4921c5e?width=1210"
+            heroTitle="redmi note 12 Pro+ 5g"
+            heroSubtitle="Rise to the challenge"
+            categories={phoneCategories}
+            mobilePhone={mobilePhone}
+          />
 
-        {/* Laptops & Computers Section */}
-        <CategorySection
-          title="Best Laptops & Computers"
-          heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/8444822a1b75359583d5f9e7b30216b4f360954a?width=1210"
-          heroTitle="Mobok 2 supercharged by M2"
-          heroPrice="$1,199"
-          categories={laptopCategories}
-        />
+          {/* Laptops & Computers Section */}
+          <CategorySection
+            title="Best Laptops & Computers"
+            heroImage="https://cdn.builder.io/api/v1/image/assets/TEMP/8444822a1b75359583d5f9e7b30216b4f360954a?width=1210"
+            heroTitle="Mobok 2 supercharged by M2"
+            heroPrice="$1,199"
+            categories={laptopCategories}
+            mobilePhone={mobilePhone}
+          />
+        </div>
 
         {/* Category Grid Sections */}
         <section className="mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Audio & Cameras */}
-            <div className="bg-white rounded-2xl p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold uppercase">
-                  Audios & Cameras
-                </h3>
-                <a href="#" className="text-gray-500 text-sm">
-                  View All →
-                </a>
-              </div>
-
-              <div className="mb-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9cb4511c24beb56c945a5a6d6efa0c5be285f4a?width=736"
-                  alt="Best Speaker 2023"
-                  className="w-full h-32 object-cover rounded-lg"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {audioCameraProducts.map((product, index) => (
-                  <button
-                    key={index}
-                    onClick={() => console.log(`Clicked on ${product.name}`)}
-                    className="text-center p-3 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-200 cursor-pointer group">
-                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-2xl mb-2 mx-auto group-hover:bg-green-100 group-hover:scale-105 transition-all duration-200">
-                      {product.icon}
-                    </div>
-                    <h4 className="font-bold text-sm group-hover:text-green-600 transition-colors">
-                      {product.name}
-                    </h4>
-                    <p className="text-gray-500 text-xs group-hover:text-gray-700 transition-colors">
-                      {product.items}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <CategoryGridSection
+              title="Audio & Camera"
+              more="View All →"
+              products={audioCameraProducts}
+              image="https://cdn.builder.io/api/v1/image/assets/TEMP/a9cb4511c24beb56c945a5a6d6efa0c5be285f4a?width=736"
+            />
 
             {/* Gaming */}
-            <div className="bg-white rounded-2xl p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold uppercase">Gaming</h3>
-                <a href="#" className="text-gray-500 text-sm">
-                  View All →
-                </a>
-              </div>
-
-              <div className="mb-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c765af29ebae9bb192b354b2d9316450852d78a7?width=736"
-                  alt="Gaming Mouse"
-                  className="w-full h-32 object-cover rounded-lg"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {gamingProducts.map((product, index) => (
-                  <button
-                    key={index}
-                    onClick={() => console.log(`Clicked on ${product.name}`)}
-                    className="text-center p-3 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-200 cursor-pointer group">
-                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-2xl mb-2 mx-auto group-hover:bg-green-100 group-hover:scale-105 transition-all duration-200">
-                      {product.icon}
-                    </div>
-                    <h4 className="font-bold text-sm group-hover:text-green-600 transition-colors">
-                      {product.name}
-                    </h4>
-                    <p className="text-gray-500 text-xs group-hover:text-gray-700 transition-colors">
-                      {product.items}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <CategoryGridSection
+              title="Gaming"
+              more="View All →"
+              products={gamingProducts}
+              image="https://cdn.builder.io/api/v1/image/assets/TEMP/c765af29ebae9bb192b354b2d9316450852d78a7?width=736"
+            />
 
             {/* Office Equipment */}
-            <div className="bg-white rounded-2xl p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold uppercase">
-                  Office Equipments
-                </h3>
-                <a href="#" className="text-gray-500 text-sm">
-                  View All →
-                </a>
-              </div>
-
-              <div className="mb-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc1203fd5403a7da3529389ba00fb81c9d2c2114?width=736"
-                  alt="Laser Projector"
-                  className="w-full h-32 object-cover rounded-lg"
-                />
-                <div className="mt-2 text-center">
-                  <h4 className="text-lg font-bold">Laser Projector</h4>
-                  <p className="text-xs text-gray-500">Home Theater 4K</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {officeProducts.map((product, index) => (
-                  <button
-                    key={index}
-                    onClick={() => console.log(`Clicked on ${product.name}`)}
-                    className="text-center p-3 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-200 cursor-pointer group">
-                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-2xl mb-2 mx-auto group-hover:bg-green-100 group-hover:scale-105 transition-all duration-200">
-                      {product.icon}
-                    </div>
-                    <h4 className="font-bold text-sm group-hover:text-green-600 transition-colors">
-                      {product.name}
-                    </h4>
-                    <p className="text-gray-500 text-xs group-hover:text-gray-700 transition-colors">
-                      {product.items}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <CategoryGridSection
+              title="Office Equipments"
+              more="View All →"
+              products={officeProducts}
+              image="https://cdn.builder.io/api/v1/image/assets/TEMP/dc1203fd5403a7da3529389ba00fb81c9d2c2114?width=736"
+            />
           </div>
         </section>
 
         {/* Promotional Banners */}
         <section className="mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
+            <div className="relative shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] rounded-2xl">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b89e3e6407d44c7442fdf7e8e7b483bf1d08334?width=1292"
                 alt="10% Back Promotion"
-                className="w-full h-48 object-cover"
+                className="w-full rounded-2xl h-48 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-              <div className="absolute inset-0 p-6 flex flex-col justify-center">
-                <h3 className="text-4xl font-bold text-yellow-400 mb-2">
+              <div className="absolute top-10 right-0 p-6 flex flex-col justify-center">
+                <h3 className="text-4xl font-bold dark:text-yellow-400 text-white mb-2">
                   10% Back
                 </h3>
                 <p className="text-white text-sm">
@@ -477,13 +488,12 @@ export default function App() {
               </div>
             </div>
 
-            <div className="relative rounded-lg overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a]">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c50223be3a62f6f8f522c522614717bcb627c2f?width=1292"
                 alt="Download App"
                 className="w-full h-48 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="absolute inset-0 p-6 flex flex-col justify-center">
                 <h3 className="text-2xl font-medium text-white mb-2">
                   Download our app
@@ -491,13 +501,13 @@ export default function App() {
                 <p className="text-gray-300 text-sm mb-4">
                   Enter your phone number and we'll send you a download link.
                 </p>
-                <div className="flex bg-white bg-opacity-10 rounded">
+                <div className="flex bg-gray-700 bg-opacity-10 rounded">
                   <input
                     type="text"
                     placeholder="(+xx) xxx..."
-                    className="flex-1 px-3 py-2 bg-transparent text-white placeholder-gray-300 outline-none"
+                    className="flex-1 px-3 py-2 bg-transparent text-white dark:placeholder-gray-200 outline-none"
                   />
-                  <button className="px-4 py-2 text-green-400 text-sm uppercase">
+                  <button className="px-4 py-2 active:text-teal-500 cursor-pointer text-green-400 text-sm uppercase">
                     Send Link
                   </button>
                 </div>
@@ -508,7 +518,7 @@ export default function App() {
 
         {/* Recently Viewed */}
         <section className="mt-8">
-          <div className="bg-white rounded-lg p-8">
+          <div className="bg-gray-300 dark:text-white dark:bg-background rounded-2xl shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] p-8">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-xl font-bold uppercase">
                 Your Recently Viewed
@@ -557,11 +567,11 @@ export default function App() {
               ].map((product, index) => (
                 <div
                   key={index}
-                  className="flex gap-4 p-4 border rounded-lg hover:shadow-md transition-shadow">
+                  className="flex gap-4 p-4 dark:text-white border rounded-2xl hover:shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] group dark:hover:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] transition-shadow">
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-24 h-20 object-cover rounded"
+                    className="w-24 h-20 mix-blend-darken dark:mix-blend-lighten object-cover group-hover:scale-125 rounded"
                   />
                   <div className="flex-1">
                     <h4 className="font-bold text-sm mb-2 line-clamp-2">
@@ -583,7 +593,7 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section className="mt-8">
+        {/* <section className="mt-8">
           <div className="space-y-6">
             <h2 className="text-xl font-bold">
               Swoo – #1 Online Marketplace for technology
@@ -614,7 +624,9 @@ export default function App() {
               View All →
             </a>
           </div>
-        </section>
+        </section> */}
+
+        <ResponsiveFooter/>
 
         {/* <ProductCard/> */}
       </main>

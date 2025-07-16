@@ -44,10 +44,10 @@ export default function Navbar() {
 
   return (
     <>
-      <div>
+      <div className="shadow-2xl">
         {" "}
-        <header className="bg-gray-300 shadow-2xl border-b-1 dark:bg-gray-800 dark:text-white border-t-1">
-          <div className="max-w-7xl mx-auto px-4 py-4">
+        <header className="bg-gray-300 border-b-1  dark:bg-gray-800 dark:text-white border-t-1">
+          <div className="max-w-7xl mx-auto px-4 py-2">
             <div className="flex lg:flex-row items-center justify-between gap-4">
               {/* Logo */}
               <Link to="/" className="flex-shrink-0">
