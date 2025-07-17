@@ -1,6 +1,7 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { ProductCardByCategory } from "./ProductCardByCategory";
 import { ClickButton } from "../UIComponent/ClickButton";
+import { useState } from "react";
 
 interface CategoryItem {
   name: string;
@@ -40,6 +41,13 @@ export default function CategorySection({
   mobilePhone,
   className = "",
 }: CategorySectionProps) {
+
+  const [loadProduct, setLoadProduct] = useState(4)
+  let products = mobilePhone.slice(0, loadProduct)
+
+  function loadMore(){
+    setLoadProduct((prev) => prev + 4)
+  }
   return (
     <section className={`mt-8  ${className}`}>
       <div className="bg-gray-300 dark:bg-background dark:text-gray-50 shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] rounded-2xl p-8">
@@ -116,15 +124,15 @@ export default function CategorySection({
         </div>
         <hr className="text-gray-400" />
         <div className="grid grid-cols-1 min-[650px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1100px]:grid-cols-4 mt-5 gap-5">
-          {mobilePhone &&
-            mobilePhone.map((product, index) => (
+          {products &&
+            products.map((product, index) => (
               <ProductCardByCategory key={index} product={product} />
             ))}
         </div>
 
         {/* Navigation */}
         <div className="flex justify-center gap-2 mt-6">
-          <ClickButton title="Load More" custom="shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a]  bg-gray-300 text-black dark:text-white dark:bg-gray-600" />
+          <ClickButton title="Load More" onLoadMore={loadMore} custom="shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a]  bg-gray-300 text-black dark:text-white dark:bg-gray-600" />
         </div>
       </div>
     </section>

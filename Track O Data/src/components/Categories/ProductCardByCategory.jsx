@@ -3,6 +3,7 @@ import { cn } from "../../lib/utils";
 import { Link } from "react-router";
 
 export const ProductCardByCategory = ({ product }) => {
+
   return (
     // Set a fixed height for the card and use flex-col for internal layout
     <Link to='/' className="flex-none border shadow-2xl group hover:shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff] dark:hover:shadow-[6px_6px_12px_#1a232b,-10px_-10px_20px_#313c4a] border-gray-200 dark:border-gray-700 rounded-2xl bg-gray-300 dark:bg-gray-800 text-gray-900 dark:text-gray-100 flex flex-col overflow-hidden transition-all duration-300]">

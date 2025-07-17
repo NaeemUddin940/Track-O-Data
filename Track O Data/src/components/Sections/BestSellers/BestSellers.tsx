@@ -1,23 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, Sun, Moon, Star } from "lucide-react"; // Importing icons, added Star
+import { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Importing icons, added Star
 import { ProductCard } from "./ProductCard";
-
-// Dummy Button component (re-used from previous immersives for consistency)
-const Button = ({ children, className, onClick, variant }) => {
-  const baseClasses = "rounded-md transition-colors duration-200";
-  const variantClasses = {
-    ghost:
-      "hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200",
-    // Add other variants if needed
-  };
-  return (
-    <button
-      className={`${baseClasses} ${variantClasses[variant] || ""} ${className}`}
-      onClick={onClick}>
-      {children}
-    </button>
-  );
-};
 
 // Dummy cn utility (re-used from previous immersives)
 const cn = (...classes) => {
@@ -108,18 +91,18 @@ const sliderProducts = [
   },
 ];
 
-// ProductCard component for individual product display
 
 // ProductSlider Component
 export function ProductSlider() {
   const [activeTab, setActiveTab] = useState("BEST SELLER");
-  const [currentIndex, setCurrentIndex] = useState(0); // New state for current product index
+  const [currentIndex, setCurrentIndex] = useState(0); 
   const scrollContainerRef = useRef(null);
-  const autoPlayIntervalRef = useRef(null); // Ref to hold the interval ID
+  const autoPlayIntervalRef = useRef(null); 
 
-  const productsToDisplay = sliderProducts; // In a real app, this would filter based on activeTab
 
-  // Function to scroll to a specific index and center the product
+  const productsToDisplay = sliderProducts;
+
+
   const scrollToProduct = (index) => {
     if (scrollContainerRef.current) {
       const productElement = scrollContainerRef.current.children[index];
@@ -128,7 +111,6 @@ export function ProductSlider() {
         const productWidth = productElement.offsetWidth;
         const productOffsetLeft = productElement.offsetLeft;
 
-        // Calculate the scroll position to center the product
         const scrollPosition =
           productOffsetLeft - containerWidth / 2 + productWidth / 2;
 
@@ -141,7 +123,7 @@ export function ProductSlider() {
     }
   };
 
-  // Function to handle manual scrolling via arrows
+
   const scroll = (direction) => {
     let newIndex = currentIndex;
     if (direction === "left") {
@@ -152,7 +134,7 @@ export function ProductSlider() {
       newIndex = (currentIndex + 1) % productsToDisplay.length;
     }
     scrollToProduct(newIndex);
-    // Pause auto-play briefly on manual interaction
+
     resetAutoPlay();
   };
 
@@ -180,15 +162,15 @@ export function ProductSlider() {
     startAutoPlay();
   };
 
-  // Effect for auto-play
+  
   useEffect(() => {
-    startAutoPlay(); // Start auto-play when component mounts
+    startAutoPlay(); 
 
-    // Clear interval when component unmounts
+
     return () => {
       stopAutoPlay();
     };
-  }, [productsToDisplay.length]); // Restart auto-play if product list changes
+  }, [productsToDisplay.length]); 
 
   return (
     <div
@@ -233,8 +215,8 @@ export function ProductSlider() {
         {/* Scrollable Container (without drag event listeners) */}
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto pb-4 hide-scrollbar space-x-4 px-4" // Removed cursor-grab
-          style={{ scrollBehavior: "smooth" }} // Ensures smooth scrolling for scrollBy
+          className="flex overflow-x-auto pb-4 hide-scrollbar space-x-4 px-4" 
+          style={{ scrollBehavior: "smooth" }}
         >
           {productsToDisplay.map((product, index) => (
             <div key={index} className="flex-shrink-0">

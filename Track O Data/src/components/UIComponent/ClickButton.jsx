@@ -1,10 +1,10 @@
 
 import styled from 'styled-components';
 
-export const ClickButton = ({title, custom}) => {
+export const ClickButton = ({title, custom, onLoadMore}) => {
   return (
     <StyledWrapper>
-      <button className={`${custom}`}>{title}</button>
+      <button onClick={onLoadMore} className={`${custom}`}>{title}</button>
     </StyledWrapper>
   );
 }
